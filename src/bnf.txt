@@ -1,0 +1,11 @@
+<push_cmd>          ::= "Push" "(" <digit> ")"
+<pop_cmd>           ::= "Pop"
+<add_cmd>           ::= "Add"
+<run_cmd>           ::= "Run" "(" <string> ")"
+
+<digit>             ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+<statement_list>    ::= <statement> | <statement> <newline> <statement_list>
+<method_decl>       ::= "Block" <whitespace> <identifier> "{" <newline> <statement_list> <newline> "}"
+<statement>         ::= <push_cmd> | <pop_cmd> | <add_cmd> | <run_cmd>
+<string>            ::= '"' <string_content> '"'
